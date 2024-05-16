@@ -1,0 +1,5 @@
+int64 goal
+---
+bool result
+---
+int64 feedback

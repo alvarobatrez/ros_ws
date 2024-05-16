@@ -57,7 +57,7 @@ sudo apt install ros-noetic-desktop-full
 sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential python3-rosdep python3-catkin-tools
 ```
 
-Close the terminal, open it again and type:
+Type:
 
 ```
 gedit .bashrc
@@ -93,7 +93,7 @@ cd ros_ws/src
 Create a new package:
 
 ```
-catkin_create_pkg name_of_the_package roscpp rospy std_msgs actionlib_msgs dependency_1
+catkin_create_pkg name_of_the_package roscpp rospy std_msgs actionlib_msgs actionlib dependency_1
 ```
 
 roscpp: dependency for C++.
@@ -108,7 +108,7 @@ Note 2: C++ code must be inside ~/ros_ws/src/name_of_the_package/src folder.
 
 Note 3: Python code must be inside ~/ros_ws/src/name_of_the_package/scripts folder.
 
-Note 4: actionlib_msgs is just required if you want to create a custom package with actions.
+Note 4: actionlib is just required if you want to use actions within the package. actionlib_msgs is required if you want to create a package with custom actions.
 
 ## Compile
 
