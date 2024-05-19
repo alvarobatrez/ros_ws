@@ -23,7 +23,7 @@ Transmitter::Transmitter()
     publish(hz);
 }
 
-void Transmitter::publish(double hz)
+void Transmitter::publish(double)
 {
     ros::Rate rate(hz);
 
@@ -42,5 +42,7 @@ void Transmitter::publish(double hz)
 int main(int argc, char **argv)
 {
     ros::init(argc, argv, "transmitter", ros::init_options::AnonymousName);
-    Transmitter();
+    Transmitter transmitter;
+
+    return 0;
 }
