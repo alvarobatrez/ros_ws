@@ -18,7 +18,8 @@ class Transmitter
 
 Transmitter::Transmitter()
 {
-    hz = 1.0;
+    // nh.setParam("hz", 1.0);
+    nh.getParam("hz", hz);
     pub = nh.advertise<std_msgs::String>("/example_topic", 10);
     publish(hz);
 }
