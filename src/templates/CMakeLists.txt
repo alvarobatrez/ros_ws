@@ -142,6 +142,9 @@ target_link_libraries(transmitter ${catkin_LIBRARIES})
 add_executable(receiver src/receiver.cpp)
 target_link_libraries(receiver ${catkin_LIBRARIES})
 
+add_executable(server src/server.cpp)
+target_link_libraries(server ${catkin_LIBRARIES})
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use

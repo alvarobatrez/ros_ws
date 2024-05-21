@@ -5,9 +5,15 @@ class Receiver
 {
     public:
 
-    Receiver();
+    Receiver()
+    {
+        sub = nh.subscribe("/example_topic", 10, &Receiver::callback, this);
+    }
 
-    void callback(const std_msgs::String::ConstPtr &msg);
+    void callback(const std_msgs::String::ConstPtr &msg)
+    {
+        ROS_INFO("Receiving %s", msg->data.c_str());
+    }
 
     private:
 
@@ -15,16 +21,6 @@ class Receiver
     ros::Subscriber sub;
 
 };
-
-Receiver::Receiver()
-{
-    sub = nh.subscribe("/example_topic", 10, &Receiver::callback, this);
-}
-
-void Receiver::callback(const std_msgs::String::ConstPtr &msg)
-{
-    ROS_INFO("Receiving %s", msg->data.c_str());
-}
 
 int main(int argc, char **argv)
 {
