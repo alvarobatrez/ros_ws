@@ -3,7 +3,7 @@ import rospy
 import actionlib
 from custom_msgs.msg import ExampleAction, ExampleResult, ExampleFeedback
 
-class TemplateActionServer():
+class TemplateActionServer:
 
     def __init__(self):
         self.action_server = actionlib.SimpleActionServer(
