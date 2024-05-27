@@ -65,4 +65,6 @@ int main(int argc, char **argv)
 {
     ros::init(argc, argv, "action_client");
     TemplateActionClient action_client;
+
+    return 0;
 }

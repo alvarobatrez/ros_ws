@@ -86,4 +86,6 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "action_server");
     TemplateActionServer action_server;
     ros::spin();
+
+    return 0;
 }

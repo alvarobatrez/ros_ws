@@ -71,7 +71,7 @@ class TemplateActionServer:
         self.cancel_goals.pop(goal_id)
 
     def goal_callback(self, goal_handle):
-        # sigle goal action server
+        # Uncomment to enable a server with a single goal at the same time
         """ if len(self.cancel_goals) > 0:
             rospy.logwarn(msg='A goal is currently active. Incoming goal rejected')
             goal_handle.set_rejected()
