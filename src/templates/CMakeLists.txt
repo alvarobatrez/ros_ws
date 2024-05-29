@@ -157,6 +157,9 @@ target_link_libraries(simple_action_client ${catkin_LIBRARIES})
 add_executable(action_server src/action_server.cpp)
 target_link_libraries(action_server ${catkin_LIBRARIES})
 
+add_executable(action_server_queue_goals src/action_server_queue_goals.cpp)
+target_link_libraries(action_server_queue_goals ${catkin_LIBRARIES})
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
