@@ -38,7 +38,7 @@ class TemplateActionClient
     {
         if (action_client.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
         {
-            std::string res = (result->result == 1) ? "true" : "false";
+            std::string res = (result->result == goal) ? "true" : "false";
             ROS_INFO("Goal succeeded: %s", res.c_str());
         }
         else
