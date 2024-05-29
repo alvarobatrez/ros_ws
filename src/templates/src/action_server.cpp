@@ -3,6 +3,8 @@
 #include <custom_msgs/ExampleAction.h>
 #include <thread>
 
+typedef actionlib::ActionServer<custom_msgs::ExampleAction>::GoalHandle GoalHandle;
+
 class TemplateActionServer
 {
     public:
@@ -20,7 +22,7 @@ class TemplateActionServer
         ROS_INFO("Action server is up");
     }
 
-    void execute_callback(actionlib::ActionServer<custom_msgs::ExampleAction>::GoalHandle goal_handle)
+    void execute_callback(GoalHandle goal_handle)
     {
         ROS_INFO("Executing new goal");
 
@@ -85,7 +87,7 @@ class TemplateActionServer
         cancel_goals.erase(goal_id);
     }
 
-    void goal_callback(actionlib::ActionServer<custom_msgs::ExampleAction>::GoalHandle goal_handle)
+    void goal_callback(GoalHandle goal_handle)
     {
         // Uncomment to enable a server with a single goal at the same time
         /* if (cancel_goals.size() > 0)
@@ -112,7 +114,7 @@ class TemplateActionServer
         std::thread(&TemplateActionServer::execute_callback, this, goal_handle).detach();
     }
 
-    void cancel_callback(actionlib::ActionServer<custom_msgs::ExampleAction>::GoalHandle goal_handle)
+    void cancel_callback(GoalHandle goal_handle)
     {
         std::string goal_id = goal_handle.getGoalID().id;
 
