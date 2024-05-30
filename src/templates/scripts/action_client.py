@@ -64,7 +64,6 @@ class TemplateActionClient:
 
             rospy.signal_shutdown(reason='')
 
-
     def feedback_callback(self, goal_handle, feedback):
         rospy.loginfo(msg=f'Feedback: {feedback.feedback}')
 
