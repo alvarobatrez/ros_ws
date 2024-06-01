@@ -1,0 +1,8 @@
+<launch>
+
+	<param name="hz" type="double" value="1.5" />
+
+	<node name="listener" pkg="templates" type="receiver.py" output="screen"/>
+    <node name="talker" pkg="templates" type="transmitter" />
+
+</launch>
