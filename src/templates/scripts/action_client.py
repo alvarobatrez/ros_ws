@@ -68,6 +68,6 @@ class TemplateActionClient:
         rospy.loginfo(msg=f'Feedback: {feedback.feedback}')
 
 if __name__ == '__main__':
-    rospy.init_node(name='action_client', anonymous=True)
+    rospy.init_node(name='action_client')
     TemplateActionClient()
     rospy.spin()
