@@ -15,6 +15,8 @@ class Client
         Client::call(length, width);
     }
 
+    private:
+
     void call(double length, double width)
     {
         client.waitForExistence();
@@ -32,8 +34,6 @@ class Client
             ROS_ERROR("Service call failed");
         }
     }
-
-    private:
 
     ros::NodeHandle nh;
     ros::ServiceClient client;

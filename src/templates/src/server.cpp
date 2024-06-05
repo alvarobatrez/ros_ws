@@ -12,6 +12,8 @@ class Server
         ROS_INFO("The server is up");
     }
 
+    private:
+
     bool callback(custom_msgs::ExampleService::Request &req, custom_msgs::ExampleService::Response &res)
     {
         res.area = req.length * req.width;
@@ -21,8 +23,6 @@ class Server
 
         return true;
     }
-
-    private:
 
     ros::NodeHandle nh;
     ros::ServiceServer server;

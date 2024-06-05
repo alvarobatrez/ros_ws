@@ -22,6 +22,8 @@ class TemplateActionServer
         ROS_INFO("Action server is up");
     }
 
+    private:
+
     void execute_callback(GoalHandle goal_handle)
     {
         ROS_INFO("Executing new goal");
@@ -124,8 +126,6 @@ class TemplateActionServer
             ROS_WARN("Canceling goal");
         }
     }
-
-    private:
 
     ros::NodeHandle nh;
     actionlib::ActionServer<custom_msgs::ExampleAction> action_server;

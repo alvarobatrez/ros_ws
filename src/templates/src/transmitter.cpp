@@ -13,6 +13,8 @@ class Transmitter
         publish(hz);
     }
 
+    private:
+
     void publish(double)
     {
         ros::Rate rate(hz);
@@ -28,8 +30,6 @@ class Transmitter
             rate.sleep();
         }
     }
-
-    private:
 
     ros::NodeHandle nh;
     ros::Publisher pub;

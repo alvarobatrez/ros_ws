@@ -10,12 +10,12 @@ class Receiver
         sub = nh.subscribe("/example_topic", 10, &Receiver::callback, this);
     }
 
+    private:
+
     void callback(const std_msgs::String::ConstPtr &msg)
     {
         ROS_INFO("Receiving %s", msg->data.c_str());
     }
-
-    private:
 
     ros::NodeHandle nh;
     ros::Subscriber sub;

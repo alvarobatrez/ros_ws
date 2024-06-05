@@ -14,6 +14,8 @@ class TemplateActionClient
         action_client.waitForResult();
     }
 
+    private:
+
     void send_goal(int goal)
     {
         action_client.waitForServer();
@@ -53,8 +55,6 @@ class TemplateActionClient
     {
         ROS_INFO("Feedback: %i", (int)feedback->feedback);
     }
-
-    private:
 
     ros::NodeHandle nh;
     actionlib::SimpleActionClient<custom_msgs::ExampleAction> action_client;

@@ -15,6 +15,21 @@ class TemplateActionClient
         action_client.waitForActionServerToStart();
     }
 
+    GoalHandle send_goal(int goal)
+    {
+        goal_msg.goal = goal;
+        GoalHandle goal_handle = action_client.sendGoal
+        (
+            goal_msg,
+            boost::bind(&TemplateActionClient::transition_callback, this, _1),
+            boost::bind(&TemplateActionClient::feedback_callback, this, _1, _2)
+        );
+        
+        return goal_handle;
+    }
+
+    private:
+
     void transition_callback(const GoalHandle goal_handle)
     {        
         int index = 0;
@@ -65,21 +80,6 @@ class TemplateActionClient
     {
         ROS_INFO("Feedback: %i", (int)feedback->feedback);
     }
-
-    GoalHandle send_goal(int goal)
-    {
-        goal_msg.goal = goal;
-        GoalHandle goal_handle = action_client.sendGoal
-        (
-            goal_msg,
-            boost::bind(&TemplateActionClient::transition_callback, this, _1),
-            boost::bind(&TemplateActionClient::feedback_callback, this, _1, _2)
-        );
-        
-        return goal_handle;
-    }
-
-    private:
 
     actionlib::ActionClient<custom_msgs::ExampleAction> action_client;
     custom_msgs::ExampleGoal goal_msg;

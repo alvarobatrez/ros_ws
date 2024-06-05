@@ -13,6 +13,8 @@ class TemplateActionServer
         ROS_INFO("Action server is up");
     }
 
+    private:
+
     void execute_callback(const custom_msgs::ExampleGoalConstPtr &goal_handle)
     {
         ROS_INFO("Executing new goal");
@@ -74,8 +76,6 @@ class TemplateActionServer
         }
 
     }
-
-    private:
 
     ros::NodeHandle nh;
     actionlib::SimpleActionServer<custom_msgs::ExampleAction> action_server;
