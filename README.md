@@ -50,10 +50,22 @@ Open the terminal and type:
 
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+```
+
+```
 sudo apt install curl
 curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+```
+
+```
 sudo apt update
+```
+
+```
 sudo apt install ros-noetic-desktop-full
+```
+
+```
 sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential python3-rosdep python3-catkin-tools
 ```
 
@@ -175,8 +187,6 @@ rosparam delete /name_of_the_parameter
 ## Actions
 
 ### Terminal Commands
-
-Autocomplete with TAB key.
 
 ```
 rostopic pub -1 /name_of_the_action/goal name_of_the_interface "data: value"
